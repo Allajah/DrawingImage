@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2CCFEF3A1B4E590B00EC2709 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2CCFEF391B4E590B00EC2709 /* main.cpp */; };
+		2CCFEF411B4E6D1000EC2709 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCFEF401B4E6D1000EC2709 /* CoreVideo.framework */; };
+		2CCFEF431B4E6D1D00EC2709 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCFEF421B4E6D1D00EC2709 /* IOKit.framework */; };
+		2CCFEF451B4E6D2500EC2709 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCFEF441B4E6D2500EC2709 /* Cocoa.framework */; };
+		2CCFEF471B4E6D2D00EC2709 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCFEF461B4E6D2D00EC2709 /* OpenGL.framework */; };
+		2CCFEF4B1B4E6DFA00EC2709 /* libglfw.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCFEF4A1B4E6DFA00EC2709 /* libglfw.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,11 @@
 /* Begin PBXFileReference section */
 		2CCFEF361B4E590B00EC2709 /* DrawingImage */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DrawingImage; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CCFEF391B4E590B00EC2709 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		2CCFEF401B4E6D1000EC2709 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		2CCFEF421B4E6D1D00EC2709 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		2CCFEF441B4E6D2500EC2709 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2CCFEF461B4E6D2D00EC2709 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		2CCFEF4A1B4E6DFA00EC2709 /* libglfw.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.dylib; path = ../../../../usr/local/lib/libglfw.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +42,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CCFEF4B1B4E6DFA00EC2709 /* libglfw.dylib in Frameworks */,
+				2CCFEF471B4E6D2D00EC2709 /* OpenGL.framework in Frameworks */,
+				2CCFEF451B4E6D2500EC2709 /* Cocoa.framework in Frameworks */,
+				2CCFEF431B4E6D1D00EC2709 /* IOKit.framework in Frameworks */,
+				2CCFEF411B4E6D1000EC2709 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +56,11 @@
 		2CCFEF2D1B4E590B00EC2709 = {
 			isa = PBXGroup;
 			children = (
+				2CCFEF4A1B4E6DFA00EC2709 /* libglfw.dylib */,
+				2CCFEF461B4E6D2D00EC2709 /* OpenGL.framework */,
+				2CCFEF441B4E6D2500EC2709 /* Cocoa.framework */,
+				2CCFEF421B4E6D1D00EC2709 /* IOKit.framework */,
+				2CCFEF401B4E6D1000EC2709 /* CoreVideo.framework */,
 				2CCFEF381B4E590B00EC2709 /* DrawingImage */,
 				2CCFEF371B4E590B00EC2709 /* Products */,
 			);
@@ -205,14 +225,30 @@
 		2CCFEF3E1B4E590B00EC2709 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Debug;
 		};
 		2CCFEF3F1B4E590B00EC2709 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/local/include,
+				);
+				LIBRARY_SEARCH_PATHS = /usr/local/lib;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = /usr/local/include;
 			};
 			name = Release;
 		};
@@ -235,6 +271,7 @@
 				2CCFEF3F1B4E590B00EC2709 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
